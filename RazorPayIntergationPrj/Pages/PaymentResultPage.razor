@@ -1,0 +1,31 @@
+﻿@page "/PaymentResultPage/{result}"
+@using RazorPayIntergationPrj.Models
+@inject NavigationManager navManager
+
+<div>
+    @if(result == "True"? true : false)
+    {
+        <h1>Payment Successfull</h1>
+    }
+    else if (result == "False" ? true : false)
+    {
+        <h1>Payment Failed</h1>
+    }
+</div>
+
+<br>
+
+<div>
+    <button @onclick="OrderFromPage">Order Again</button>
+</div>
+
+@code {
+    [Parameter]
+    public string result { get; set; }
+
+    private void OrderFromPage()
+    {
+        navManager.NavigateTo($"/OrderFormPage");
+    }
+}
+

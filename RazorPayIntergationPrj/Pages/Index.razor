@@ -1,0 +1,16 @@
+﻿@page "/"
+@using RazorPayIntergationPrj.Models
+@inject NavigationManager navManager
+
+<div>
+    <button @onclick="OrderFromPage">Order Via Razorpay</button>
+</div>
+
+
+@code {
+    private void OrderFromPage()
+    {
+        navManager.NavigateTo($"/OrderFormPage");
+    }
+}
+
