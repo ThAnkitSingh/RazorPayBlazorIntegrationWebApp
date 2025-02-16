@@ -1,0 +1,22 @@
+﻿@page "/"
+
+@inject NavigationManager navManager
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<div>
+    <button @onclick="OrderFromPage">Order Via Razorpay</button>
+</div>
+
+
+@code {
+    private void OrderFromPage()
+    {
+        navManager.NavigateTo($"/OrderFormPage");
+    }
+}
+
